@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Owais</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR CSS */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: linear-gradient(90deg, #000000, #1a1a1a);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  position: relative;
+  margin-left: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff3b3b;
+  transition: width 0.3s ease;
+}
+header nav a:hover {
+  color: #ff3b3b;
+}
+header nav a:hover::after {
+  width: 100%;
+}
+header nav a.active {
+  color: #ff3b3b;
+}
+header nav .hire-btn {
+  margin-left: 35px;
+  padding: 10px 20px;
+  background: #ff3b3b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header nav .hire-btn:hover {
+  background: #ff5656;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 59, 59, 0.4);
+}
+/* ✅ Mobile Styles */
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 769px) {
+  header {
+    padding: 10px 20px;
+  }
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  nav {
+    position: fixed;
+    top:0;
+    right: -100%;
+    width: 180px;
+    height: 400px;
+    border-radius: 10px;
+    border: 2px solid red;
+    background: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    transition: right 0.4s ease;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+  nav.show {
+    right: 0;
+  }
+  nav a {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  nav .hire-btn {
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+
+/* LOGO NAVBAR */
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+.logo span {
+  color: #ff3b3b;
+  transition: color 0.4s ease;
+}
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: #ff3b3b;
+  transition: left 0.4s ease;
+}
+.logo:hover::after {
+  left: 0;
+}
+.logo:hover {
+  color: #ff3b3b;
+}
+.logo:hover span {
+  color: #fff;
+}
+
+
+
+ /* Hero Section */
+ .hero {
+  text-align: center;
+  margin: 40px auto 30px;
+  font-size: clamp(18px, 4vw, 42px); 
+  font-style: italic;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  opacity: 0;
+  transform: translateY(30px);
+  padding: 0 15px;
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    font-size: clamp(16px, 5vw, 28px);
+    margin: 30px auto 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    font-size: clamp(14px, 6vw, 22px);
+    line-height: 1.4;
+  }
+}
+
+
+
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: #000;
+      color: #fff;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      .about {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+ 
+<header>
+
+  <div class="logo"><span>/OW</span>AIS/</div>
+   <!-- vertical open buttion -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <!-- navbar html -->
+  <nav>
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <a href="index.html" >Home</a>
+    <a href="Portfolio.html" class="active">Portfolio</a>
+    <a href="about Me.html">About</a>
+    <a href="HireMe.html">Hire Me</a>
+     <button class="hire-btn"><a href="https:wa.me/923443026736">Contact Me</a></button>
+  </nav>
+</header>
+<!-- navbar java script -->
+<script>
+function toggleMenu() {
+  document.querySelector('nav').classList.toggle('show');
+}
+</script>
+
+
+
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Protfolio</h1>
+    <p>
+    I'll upload my other designs soon...
+    </p>
+  </section>
+
+
+<!-- gallery css -->
+<style>
+    .section-title {
+      color: red;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+      margin: 0 50px 15px;
+      text-transform: uppercase;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+      gap: 20px;
+      padding: 0 50px;
+    }
+
+    /* Work Item */
+    .work-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .work-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .work-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Overlay */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+    }
+
+    .work-item:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay .category {
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      opacity: 0.9;
+    }
+
+    .overlay .name {
+      font-size: 50px;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .work-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+      }
+    }
+  </style>
+    <!-- thumbnail ka uper my design ka css ha -->
+  <style>
+.work {
+  font-size: 28px;             
+  font-weight: 700;            
+  text-transform: uppercase;   
+  color: #111;                 
+  text-align: center;          
+  position: relative;          
+  margin: 60px 0 30px;         
+  letter-spacing: 2px;         
+  cursor: pointer;            
+  transition: color 0.3s ease; 
+}
+.work::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;               
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;                 
+  height: 3px;
+  background: red;             
+  border-radius: 2px;
+  transition: width 0.3s ease; 
+}
+
+.work:hover {
+  color: red;
+}
+.work:hover::after {
+  width: 120px;
+}
+
+  </style>
+    <h3 class="work">My Design Work</h3>
+
+     <!-- img and my design html -->
+  <div class="work-grid">
+
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 39.webp" alt="Work 1">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 38.webp" alt="Work 1">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 37.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 36.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 35.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 34.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 33.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 32.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 31.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 30.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 29.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th  28.jpg" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 27.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 26.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 25.png" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 24.png" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 23.jpg" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 22.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 21.jpg" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 20.png" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 19.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 18.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 17.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 16.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 15.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 14.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 13.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 12.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 11.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 10.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 9.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 8.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 7.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 6.png" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 5.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 4.png" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 3.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 2.webp" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+    <div class="work-item" onclick="openModal(this)">
+      <img src="th 1.png" alt="Work 3">
+      <div class="overlay">
+        <p class="category">Thumbnail Design</p>
+        <h3 class="name">Owais</h3>
+      </div>
+    </div>
+
+</div>
+     <!-- gallery java script -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg">
+  </div>
+  <script>
+    function openModal(el) {
+      const imgSrc = el.querySelector("img").src;
+      document.getElementById("modalImg").src = imgSrc;
+      document.getElementById("myModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
+
+
+
+<br><hr>
+
+    <!-- /* whatapp buttion  */ -->
+<style>
+
+
+    .whatsapp-btn {
+  background-color: #25D366;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5b;
+  transform: scale(1.05);
+}
+
+.whatsapp-btn:active {
+  transform: scale(0.95);
+}
+
+/* ✅ Responsive */
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    font-size: 16px;
+  }
+}
+     /* Hire Section */
+    .hire {
+      text-align: left;
+      margin-left: 400px;
+      padding: 30px;
+
+    }
+    .hire h1 {
+      color: red;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+    .hire p {
+      font-size: 30px;
+      font-weight: 600;
+    }
+    .hire a {
+      display: block;
+      font-size: 18px;
+      color: #312f2f;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 790px) {
+  .hire {
+    margin: 0;
+  }
+}
+</style>  
+
+  <!-- Hire Section -->
+   <br>
+  <div class="hire">
+    <h1>Hire Owais</h1>
+    <p>Make things work like magic</p>
+    <a href="mailto:owaisdesignby@gmail.com">Email: owaisdesignby@gmail.com</a>
+    <br>
+    <button type="button" class="whatsapp-btn" onclick="window.open('https:wa.me/923443026736', '_blank')">
+     Contact Me💯
+      </button>
+  </div>
+
+
+
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-wrapper">
+    <div class="footer-left">
+      <h2 class="footer-logo">Owais Designer</h2>
+      <p class="footer-tagline">✅ Creative designs, crafted with passion<br>✅ Designs that make your brand shine.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-section">
+        <h3>Contact</h3>
+
+        <p>📧<a href="https://mail.google.com/mail/?view=cm&fs=1&to=owaisdesignby@gmail.com" 
+               target="_blank">
+               owaisdesignby@gmail.com</a>
+        </p>
+
+        <p><a href='https:wa.me/923443026736'>
+            📱+92 344 3026736</a>
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Location</h3>
+        <p>📍 Karachi, Pakistan</p>
+        <p>🌍 Available Worldwide</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Owais Designer | Crafted with ❤️ & pixels in Karachi</p>
+  </div>
+</footer>
+
+<!-- footer css  -->
+ <style>
+    .footer {
+  background: #0e0e0e;
+  color: #f4f4f4;
+  padding: 50px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.footer-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #222;
+  padding-bottom: 30px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #ff3b3b;
+}
+
+.footer-tagline {
+  font-size: 18px;
+  color: #bbb;
+  margin-top: 8px;
+}
+
+.footer-right {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #ff3b3b;
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+
+.footer-section p {
+  font-size: 24px;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-section a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ff3b3b;
+  transition: width 0.3s ease;
+}
+
+.footer-section a:hover::after {
+  width: 100%;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+</style>
+
+</body>
+</html>

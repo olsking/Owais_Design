@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Owais</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #000;
+
+      line-height: 1.6;
+    }
+
+    /* NAVBAR CSS */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: linear-gradient(90deg, #000000, #1a1a1a);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  position: relative;
+  margin-left: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff3b3b;
+  transition: width 0.3s ease;
+}
+header nav a:hover {
+  color: #ff3b3b;
+}
+header nav a:hover::after {
+  width: 100%;
+}
+header nav a.active {
+  color: #ff3b3b;
+}
+header nav .hire-btn {
+  margin-left: 35px;
+  padding: 10px 20px;
+  background: #ff3b3b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header nav .hire-btn:hover {
+  background: #ff5656;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 59, 59, 0.4);
+}
+/* ✅ Mobile Styles */
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 769px) {
+  header {
+    padding: 10px 20px;
+  }
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  nav {
+    position: fixed;
+    top:0;
+    right: -100%;
+    width: 180px;
+    height: 400px;
+    border-radius: 10px;
+    border: 2px solid red;
+    background: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    transition: right 0.4s ease;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+  nav.show {
+    right: 0;
+  }
+  nav a {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  nav .hire-btn {
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+
+/* LOGO NAVBAR */
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+.logo span {
+  color: #ff3b3b;
+  transition: color 0.4s ease;
+}
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: #ff3b3b;
+  transition: left 0.4s ease;
+}
+.logo:hover::after {
+  left: 0;
+}
+.logo:hover {
+  color: #ff3b3b;
+}
+.logo:hover span {
+  color: #fff;
+}
+
+
+
+ /* Hero Section */
+ .hero {
+  text-align: center;
+  margin: 40px auto 30px;
+  font-size: clamp(18px, 4vw, 42px); 
+  font-style: italic;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  opacity: 0;
+  transform: translateY(30px);
+  padding: 0 15px;
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    font-size: clamp(16px, 5vw, 28px);
+    margin: 30px auto 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    font-size: clamp(14px, 6vw, 22px);
+    line-height: 1.4;
+  }
+}
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: #000;
+      color: #fff;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      .about {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+ 
+<header>
+  <div class="logo"><span>/OW</span>AIS/</div>
+   <!-- vertical open buttion -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <!-- navbar html -->
+  <nav>
+    <!-- <div class="close-btn" onclick="toggleMenu()">✖</div> -->
+    <a href="index.html" >Home</a>
+    <a href="Portfolio.html">Portfolio</a>
+    <a href="about Me.html" class="active">About</a>
+    <a href="HireMe.html">Hire Me</a>
+    <button class="hire-btn"><a href='https:wa.me/923443026736'>Contact</a></button>
+  </nav>
+</header>
+
+<!-- navbar java script -->
+<script>
+function toggleMenu() {
+  document.querySelector('nav').classList.toggle('show');
+}
+</script>
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg">
+  </div>
+  <script>
+    function openModal(el) {
+      const imgSrc = el.querySelector("img").src;
+      document.getElementById("modalImg").src = imgSrc;
+      document.getElementById("myModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
+
+
+
+<!-- about css -->
+ <style>
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+ 
+  color: #e9ecf5;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #14182a, #1d1f33);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image Styling */
+.about-image {
+  flex: 1 1 300px;
+  text-align: center;
+  padding: 10px;
+}
+.about-image img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid transparent;
+  background: linear-gradient(135deg, #ccff00, #00f7ff) padding-box,
+              linear-gradient(135deg, #ccff00, #00f7ff) border-box;
+  box-shadow: 0 0 30px rgba(204,255,0,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(204,255,0,0.8);
+}
+
+/* Content Styling */
+.about-content {
+  flex: 2 1 500px;
+  padding: 20px 30px;
+}
+.about-content h1 {
+  font-size: 38px;
+  color: #ccff00;
+  margin-bottom: 12px;
+}
+.about-content h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: #aeb4c7;
+}
+.about-content p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #d6dae7;
+}
+.about-content .btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #ccff00, #00f7ff);
+  color: #0f1220;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+.about-content .btn:hover {
+  background: linear-gradient(135deg, #b8e600, #00d6d6);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .about-image img {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+  .about-content h1 {
+    font-size: 30px;
+  }
+}
+</style>
+<section class="about-section">
+  <div class="about-image">
+    <img src="owais_img.jpg" alt="Owais Designer">
+  </div>
+  <div class="about-content">
+    <h1>About Me</h1>
+    <h3>Creative Designer | Visual Storyteller</h3>
+    <p>
+      Hi, I'm Owais — a passionate Graphic Designer with a keen eye for detail and aesthetics.  
+      I specialize in creating visuals that not only look stunning but communicate your brand’s story effectively.  
+      Currently pursuing my design journey with <strong>Aptech</strong>, I’m committed to delivering impactful designs that inspire, engage, and connect with your audience.
+    </p>
+    <a href="Portfolio.html" class="btn">View My Work</a>
+  </div>
+
+
+
+
+
+
+</section>
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-wrapper">
+    <div class="footer-left">
+      <h2 class="footer-logo">Owais Designer</h2>
+      <p class="footer-tagline">✅ Creative designs, crafted with passion<br>✅ Designs that make your brand shine.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-section">
+        <h3>Contact</h3>
+
+        <p>📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=owaisdesignby@gmail.com" 
+               target="_blank">
+               owaisdesignby@gmail.com</a>
+        </p>
+
+        <p><a href='https:wa.me/923443026736'>
+            📱+92 344 3026736</a>
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Location</h3>
+        <p>📍 Karachi, Pakistan</p>
+        <p>🌍 Available Worldwide</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Owais Designer | Crafted with ❤️ & pixels in Karachi</p>
+  </div>
+</footer>
+<!-- footer css  -->
+ <style>
+    .footer {
+  background: #0e0e0e;
+  color: #f4f4f4;
+  padding: 50px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.footer-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #222;
+  padding-bottom: 30px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #ff3b3b;
+}
+
+.footer-tagline {
+  font-size: 18px;
+  color: #bbb;
+  margin-top: 8px;
+}
+
+.footer-right {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #ff3b3b;
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+
+.footer-section p {
+  font-size: 24px;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-section a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ff3b3b;
+  transition: width 0.3s ease;
+}
+
+.footer-section a:hover::after {
+  width: 100%;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+</style>
+
+</body>
+</html>
